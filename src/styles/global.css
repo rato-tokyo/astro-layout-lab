@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  /* ヘッダー高さ（sticky top 計算に使用） */
+  --spacing-header: 4rem;
+  /* ページ上下パディング */
+  --spacing-page-y: 1.5rem;
+  /* セクション間ギャップ */
+  --spacing-section: 2rem;
+
+  /* カラー */
+  --color-text: #1a1a1a;
+  --color-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-accent: #2563eb;
+  --color-accent-light: #eff6ff;
+  --color-surface: #f9fafb;
+}

@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TwoColumnLayout from '../components/TwoColumnLayout.astro';
+import MockSidebar from '../components/MockSidebar.astro';
+
+const sections = [
+  {
+    title: 'はじめに',
+    body: '日本で唯一の瞑想空間。このサイトは TwoColumnLayout コンポーネントの検証用モックです。サイドバーはスクロールしても画面上部に固定されます。',
+  },
+  {
+    title: '体験について',
+    body: '各セッションは60分。少人数制で静寂な空間を提供します。初心者から上級者まで幅広く対応しています。ここには長めのテキストが入ります。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  },
+  {
+    title: 'アクセス',
+    body: '東京都新宿区高田馬場。JR 山手線・西武新宿線・東京メトロ東西線「高田馬場駅」より徒歩5分。スカイパレスビル3F。',
+  },
+  {
+    title: 'よくある質問',
+    body: 'Q. 予約は必要ですか？ A. 通常プランは予約不要です。貸切プランは事前予約が必要です。\n\nQ. 持ち物は？ A. 動きやすい服装でお越しください。ヨガマットは無料貸し出ししています。\n\nQ. 駐車場はありますか？ A. 近隣のコインパーキングをご利用ください。',
+  },
+  {
+    title: 'お客様の声',
+    body: '「毎週通っています。都会の喧騒を忘れられる唯一の場所です」— 田中様\n\n「初めて瞑想をしましたが、スタッフの方が丁寧に説明してくれました」— 鈴木様\n\n「貸切プランで職場の同僚と来ました。チームビルディングにもなりました」— 佐藤様',
+  },
+  {
+    title: 'メディア掲載',
+    body: '○○新聞、△△マガジン、◇◇ウェブなど多数のメディアに取り上げられています。詳細は各媒体のウェブサイトをご参照ください。',
+  },
+  {
+    title: 'ブログ',
+    body: '最新記事: 「瞑想で変わる毎日」「呼吸法の基本」「マインドフルネスとは何か」。定期的に新しい記事を更新しています。ぜひブックマークしてください。',
+  },
+];
+---
+
+<BaseLayout title="TwoColumnLayout 検証">
+  <TwoColumnLayout>
+    <div slot="main" class="flex flex-col gap-8">
+      {sections.map((s) => (
+        <section class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+          <h2 class="text-xl font-bold text-[var(--color-text)]">{s.title}</h2>
+          <p class="mt-3 whitespace-pre-line leading-relaxed text-[var(--color-muted)]">{s.body}</p>
+        </section>
+      ))}
+    </div>
+
+    <MockSidebar slot="sidebar" />
+  </TwoColumnLayout>
+</BaseLayout>

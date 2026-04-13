@@ -1,0 +1,26 @@
+---
+/**
+ * TwoColumnLayout
+ * - slot="main"   : 左カラム（可変幅）
+ * - slot="sidebar": 右カラム（固定 22rem、lg以上のみ表示）
+ *
+ * sticky top は CSS変数 --spacing-header + --spacing-page-y で自動計算。
+ */
+---
+
+<div class="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_22rem]">
+  <!-- メインカラム -->
+  <div class="min-w-0">
+    <slot name="main" />
+  </div>
+
+  <!-- サイドバー（lg以上のみ表示） -->
+  <aside class="hidden lg:block">
+    <div
+      class="sticky"
+      style="top: calc(var(--spacing-header) + var(--spacing-page-y))"
+    >
+      <slot name="sidebar" />
+    </div>
+  </aside>
+</div>
