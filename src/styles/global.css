@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  /* ヘッダー高さ（sticky top 計算に使用） */
-  --spacing-header: 4rem;
+  /* ヘッダー高さ（sticky top 計算に使用）: 上段 93px + 下段ナビ 41px */
+  --spacing-header: 134px;
   /* ページ上下パディング */
   --spacing-page-y: 1.5rem;
   /* セクション間ギャップ */
